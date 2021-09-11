@@ -20,13 +20,224 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr;
   column-gap: 20px;
-  border: 2px solid red;
   width: 1100px;
+}
+
+.main {
+  position: relative;
+  width: 250px;
+  height: auto;
+}
+
+.main .profile {
+  background-color: #5847eb;
+  padding: 25px 0 100px 20px;
+  border-radius: 15px;
+}
+
+.main .profile img {
+  width: 75px;
+  height: auto;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
+.main .profile p {
+  font-size: 15px;
+  font-weight: 400;
+  color: #bdc1ff;
+}
+
+.main .profile h1 {
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.main .profile .mob-only {
+  display: none;
+}
+
+.main .filter {
+  position: absolute;
+  top: 75%;
+  width: 100%;
+  background-color: #1c1f4a;
+  padding: 90px 0 10px 20px;
+  border-radius: 0 0 15px 15px;
+  z-index: -1;
+}
+
+.main .filter li {
+  color: #bdc1ff;
+  margin-bottom: 15px;
+  list-style: none;
+}
+
+.main .filter li:hover {
+  cursor: pointer;
+  color: #fff;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  row-gap: 30px;
+  row-gap: 150px;
+}
+
+.cards .card.work, .cards .card.play, .cards .card.study, .cards .card.exercise, .cards .card.social, .cards .card.self-care {
+  position: relative;
+}
+
+.cards .card.work .background, .cards .card.play .background, .cards .card.study .background, .cards .card.exercise .background, .cards .card.social .background, .cards .card.self-care .background {
+  border-radius: 15px 15px 0 0;
+  width: 250px;
+  height: 100px;
+}
+
+.cards .card.work .info, .cards .card.play .info, .cards .card.study .info, .cards .card.exercise .info, .cards .card.social .info, .cards .card.self-care .info {
+  position: absolute;
+  top: 40%;
+  background-color: #1c1f4a;
+  width: 250px;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.cards .card.work .info .type, .cards .card.play .info .type, .cards .card.study .info .type, .cards .card.exercise .info .type, .cards .card.social .info .type, .cards .card.self-care .info .type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.cards .card.work .info .current-hours, .cards .card.play .info .current-hours, .cards .card.study .info .current-hours, .cards .card.exercise .info .current-hours, .cards .card.social .info .current-hours, .cards .card.self-care .info .current-hours {
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.cards .card.work .info .last-hours, .cards .card.play .info .last-hours, .cards .card.study .info .last-hours, .cards .card.exercise .info .last-hours, .cards .card.social .info .last-hours, .cards .card.self-care .info .last-hours {
+  color: #bdc1ff;
+  font-size: 15px;
+}
+
+.cards .card.work .background {
+  background: url("../images/icon-work.svg"), #ff8c66;
+  background-repeat: no-repeat;
+  background-position: 90% -50%;
+}
+
+.cards .card.play .background {
+  background: url("../images/icon-play.svg"), #56c2e6;
+  background-repeat: no-repeat;
+  background-position: 90% -50%;
+}
+
+.cards .card.study .background {
+  background: url("../images/icon-study.svg"), #ff5c7c;
+  background-repeat: no-repeat;
+  background-position: 90% -50%;
+}
+
+.cards .card.exercise .background {
+  background: url("../images/icon-exercise.svg"), #4acf81;
+  background-repeat: no-repeat;
+  background-position: 90% -10%;
+}
+
+.cards .card.social .background {
+  background: url("../images/icon-social.svg"), #7536d3;
+  background-repeat: no-repeat;
+  background-position: 90% -50%;
+}
+
+.cards .card.self-care .background {
+  background: url("../images/icon-self-care.svg"), #f1c65b;
+  background-repeat: no-repeat;
+  background-position: 90% -50%;
+}
+
+.cards .card.work:hover, .cards .card.play:hover, .cards .card.study:hover, .cards .card.exercise:hover, .cards .card.social:hover, .cards .card.self-care:hover {
+  cursor: pointer;
+}
+
+.cards .card.work:hover .info, .cards .card.play:hover .info, .cards .card.study:hover .info, .cards .card.exercise:hover .info, .cards .card.social:hover .info, .cards .card.self-care:hover .info {
+  background-color: #6f76c8;
+}
+
+@media (max-width: 1068px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 80px;
+    margin: 80px 0px 80px 0;
+  }
+  .main {
+    place-self: center;
+  }
+  .main .profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 20px 30px 20px;
+  }
+  .main .profile img {
+    width: 55px;
+    margin-bottom: 0px;
+    margin-right: 20px;
+  }
+  .main .profile p {
+    font-size: 14px;
+  }
+  .main .profile h1 {
+    font-size: 19px;
+  }
+  .main .profile .desk-only {
+    display: none;
+  }
+  .main .profile .mob-only {
+    display: block;
+  }
+  .main .filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px 10px 20px;
+  }
+  .main .filter li {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    place-self: center;
+    row-gap: 70px;
+  }
+  .cards .card.work, .cards .card.play, .cards .card.study, .cards .card.exercise, .cards .card.social, .cards .card.self-care {
+    position: relative;
+  }
+  .cards .card.work .info .type, .cards .card.play .info .type, .cards .card.study .info .type, .cards .card.exercise .info .type, .cards .card.social .info .type, .cards .card.self-care .info .type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .cards .card.work .info .hours, .cards .card.play .info .hours, .cards .card.study .info .hours, .cards .card.exercise .info .hours, .cards .card.social .info .hours, .cards .card.self-care .info .hours {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cards .card.work .info .hours .current-hours, .cards .card.play .info .hours .current-hours, .cards .card.study .info .hours .current-hours, .cards .card.exercise .info .hours .current-hours, .cards .card.social .info .hours .current-hours, .cards .card.self-care .info .hours .current-hours {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 0px;
+  }
+  .cards .card.work .info .hours .last-hours, .cards .card.play .info .hours .last-hours, .cards .card.study .info .hours .last-hours, .cards .card.exercise .info .hours .last-hours, .cards .card.social .info .hours .last-hours, .cards .card.self-care .info .hours .last-hours {
+    color: #bdc1ff;
+    font-size: 14px;
+  }
 }
