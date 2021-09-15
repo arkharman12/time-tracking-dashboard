@@ -33,6 +33,10 @@ body {
   background-color: #5847eb;
   padding: 25px 0 100px 20px;
   border-radius: 15px;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  z-index: 1;
 }
 
 .main .profile img {
@@ -58,23 +62,28 @@ body {
   display: none;
 }
 
-.main .filter {
+.main .days-filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   position: absolute;
   top: 75%;
   width: 100%;
   background-color: #1c1f4a;
   padding: 90px 0 10px 20px;
   border-radius: 0 0 15px 15px;
-  z-index: -1;
 }
 
-.main .filter li {
+.main .days-filter button {
+  font-family: 'Rubik', sans-serif;
   color: #bdc1ff;
   margin-bottom: 15px;
-  list-style: none;
+  background-color: transparent;
+  border: none;
 }
 
-.main .filter li:hover {
+.main .days-filter button:hover {
   cursor: pointer;
   color: #fff;
 }
@@ -200,13 +209,17 @@ body {
   .main .profile .mob-only {
     display: block;
   }
-  .main .filter {
+  .main .days-filter {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 20px 10px 20px;
+    position: absolute;
+    top: 95%;
+    padding: 135px 20px 10px 20px;
+    border-radius: 15px;
   }
-  .main .filter li {
+  .main .days-filter button {
     margin-bottom: 10px;
     font-size: 15px;
   }
@@ -239,5 +252,8 @@ body {
   .cards .card.work .info .hours .last-hours, .cards .card.play .info .hours .last-hours, .cards .card.study .info .hours .last-hours, .cards .card.exercise .info .hours .last-hours, .cards .card.social .info .hours .last-hours, .cards .card.self-care .info .hours .last-hours {
     color: #bdc1ff;
     font-size: 14px;
+  }
+  .cards .card.work {
+    margin-top: 115px;
   }
 }

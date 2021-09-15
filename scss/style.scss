@@ -52,6 +52,10 @@ body {
         background-color: $blue;
         padding: 25px 0 100px 20px;
         border-radius: 15px;
+        position: absolute;
+        top: 0%;
+        width: 100%;
+        z-index: 1;
 
         img {
             width: 75px;
@@ -77,22 +81,27 @@ body {
         }
     }
 
-    .filter {
+    .days-filter {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
         position: absolute;
         top: 75%;
         width: 100%;
         background-color: $dark-blue;
         padding: 90px 0 10px 20px;
         border-radius: 0 0 15px 15px;
-        z-index: -1;
-
-        li {
+        
+        button {
+            font-family: 'Rubik', sans-serif;
             color: $pale-blue;
             margin-bottom: 15px;
-            list-style: none;
+            background-color: transparent;
+            border: none;
         }
 
-        li:hover {
+        button:hover {
             cursor: pointer;
             color: #fff;
         }
@@ -200,6 +209,8 @@ body {
     }
 }
 
+
+// Media queries
 @media (max-width: 1068px) {
 
     .container {
@@ -242,13 +253,17 @@ body {
             }
         }
 
-        .filter {
+        .days-filter {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            padding: 50px 20px 10px 20px;
+            position: absolute;
+            top: 95%;
+            padding: 135px 20px 10px 20px;
+            border-radius: 15px;
 
-            li {
+            button {
                 margin-bottom: 10px;
                 font-size: 15px;
             }
@@ -292,6 +307,10 @@ body {
                     }
                 }
             }
+        }
+
+        .card.work {
+            margin-top: 115px;
         }
     }
 }
