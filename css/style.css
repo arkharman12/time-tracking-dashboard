@@ -88,6 +88,10 @@ body {
   color: #fff;
 }
 
+.main .days-filter button.active {
+  color: #fff;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
